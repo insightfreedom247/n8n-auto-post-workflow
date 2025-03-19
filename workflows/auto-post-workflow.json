@@ -1,0 +1,79 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "sheetId": "={{$env.SHEET_ID}}",
+        "range": "A:D",
+        "headerRow": true
+      },
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4",
+        "prompt": "=Tạo nội dung bài viết dựa trên: {{$node.Google_Sheets.json.title}}",
+        "temperature": 0.7
+      },
+      "name": "OpenAI",
+      "type": "n8n-nodes-base.openai",
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "model": "dall-e-3",
+        "prompt": "={{$node.OpenAI.json.text}}",
+        "size": "1024x1024"
+      },
+      "name": "Image Generation",
+      "type": "n8n-nodes-base.openai",
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "pageId": "={{$env.FB_PAGE_ID}}",
+        "content": "={{$node.OpenAI.json.text}}",
+        "imageUrl": "={{$node.Image_Generation.json.url}}"
+      },
+      "name": "Facebook",
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "position": [850, 300]
+    }
+  ],
+  "connections": {
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Image Generation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image Generation": {
+      "main": [
+        [
+          {
+            "node": "Facebook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
