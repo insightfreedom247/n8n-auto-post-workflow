@@ -2,6 +2,12 @@
 
 Workflow tự động đăng bài lên Facebook Fanpage sử dụng n8n
 
+[![Sao chép Workflow](https://img.shields.io/badge/n8n-Sao%20ch%C3%A9p%20Workflow-00FF00?style=for-the-badge&logo=n8n)](https://n8n-el0q.onrender.com/workflow/new?name=Auto%20Post%20Facebook&importUrl=https://raw.githubusercontent.com/insightfreedom247/n8n-auto-post-workflow/main/workflows/auto-post-workflow.json)
+
+## Sơ đồ Workflow
+
+![Workflow Diagram](docs/workflow-diagram.svg)
+
 ## Mô tả
 
 Dự án này tạo một workflow tự động hóa việc đăng bài lên Facebook Fanpage từ dữ liệu trong Google Sheets, sử dụng n8n làm nền tảng tự động hóa.
@@ -15,7 +21,7 @@ Dự án này tạo một workflow tự động hóa việc đăng bài lên Fac
 
 ## Cài đặt
 
-1. Import workflow vào n8n server của bạn
+1. Click vào nút "Sao chép Workflow" màu xanh ở trên để import workflow vào n8n server của bạn
 2. Cấu hình các credentials:
    - Google Sheets
    - Facebook
