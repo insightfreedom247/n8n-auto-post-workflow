@@ -2,8 +2,6 @@
 
 Workflow tự động đăng bài lên Facebook Fanpage sử dụng n8n
 
-[![Sao chép Workflow](https://img.shields.io/badge/n8n-Sao%20ch%C3%A9p%20Workflow-00FF00?style=for-the-badge&logo=n8n)](https://n8n-el0q.onrender.com/workflow/new?name=Auto%20Post%20Facebook&importUrl=https://raw.githubusercontent.com/insightfreedom247/n8n-auto-post-workflow/main/workflows/auto-post-workflow.json)
-
 ## Sơ đồ Workflow
 
 ![Workflow Diagram](docs/workflow-diagram.svg)
@@ -21,12 +19,16 @@ Dự án này tạo một workflow tự động hóa việc đăng bài lên Fac
 
 ## Cài đặt
 
-1. Click vào nút "Sao chép Workflow" màu xanh ở trên để import workflow vào n8n server của bạn
-2. Cấu hình các credentials:
+1. Copy nội dung file JSON trong thư mục `workflows/auto-post-workflow.json`
+2. Trong n8n server của bạn:
+   - Click vào "New Workflow"
+   - Click vào "Import from clipboard"
+   - Dán nội dung JSON vào và click "Import"
+3. Cấu hình các credentials:
    - Google Sheets
    - Facebook
    - OpenAI
-3. Cập nhật các biến môi trường
+4. Cập nhật các biến môi trường
 
 ## Biến môi trường
 
