@@ -1,44 +1,89 @@
 {
+  "meta": {
+    "instanceId": "auto-post-workflow",
+    "name": "Tự động đăng bài Facebook",
+    "description": "Workflow tự động đăng bài lên Facebook Fanpage từ Google Sheets sử dụng OpenAI"
+  },
   "nodes": [
     {
       "parameters": {
         "sheetId": "={{$env.SHEET_ID}}",
         "range": "A:D",
-        "headerRow": true
+        "headerRow": true,
+        "options": {
+          "readAsString": false
+        }
       },
       "name": "Google Sheets",
       "type": "n8n-nodes-base.googleSheets",
-      "position": [250, 300]
+      "typeVersion": 4.1,
+      "position": [250, 300],
+      "credentials": {
+        "googleApi": {
+          "id": "google-sheets-credentials",
+          "name": "Google Sheets Account"
+        }
+      }
     },
     {
       "parameters": {
         "model": "gpt-4",
         "prompt": "=Tạo nội dung bài viết dựa trên: {{$node.Google_Sheets.json.title}}",
-        "temperature": 0.7
+        "temperature": 0.7,
+        "maxTokens": 500,
+        "options": {
+          "language": "Vietnamese"
+        }
       },
       "name": "OpenAI",
       "type": "n8n-nodes-base.openai",
-      "position": [450, 300]
+      "typeVersion": 1,
+      "position": [450, 300],
+      "credentials": {
+        "openAiApi": {
+          "id": "openai-credentials",
+          "name": "OpenAI Account"
+        }
+      }
     },
     {
       "parameters": {
         "model": "dall-e-3",
         "prompt": "={{$node.OpenAI.json.text}}",
-        "size": "1024x1024"
+        "size": "1024x1024",
+        "quality": "standard",
+        "style": "natural"
       },
       "name": "Image Generation",
       "type": "n8n-nodes-base.openai",
-      "position": [650, 300]
+      "typeVersion": 1,
+      "position": [650, 300],
+      "credentials": {
+        "openAiApi": {
+          "id": "openai-credentials",
+          "name": "OpenAI Account"
+        }
+      }
     },
     {
       "parameters": {
+        "resource": "page",
         "pageId": "={{$env.FB_PAGE_ID}}",
         "content": "={{$node.OpenAI.json.text}}",
-        "imageUrl": "={{$node.Image_Generation.json.url}}"
+        "additionalFields": {
+          "link": "={{$node.Image_Generation.json.url}}"
+        }
       },
       "name": "Facebook",
       "type": "n8n-nodes-base.facebookGraphApi",
-      "position": [850, 300]
+      "typeVersion": 1,
+      "position": [850, 300],
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "facebook-credentials",
+          "name": "Facebook Page"
+        }
+      }
     }
   ],
   "connections": {
@@ -75,5 +120,16 @@
         ]
       ]
     }
-  }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "timezone": "Asia/Ho_Chi_Minh"
+  },
+  "staticData": null,
+  "pinData": {},
+  "versionId": "1",
+  "triggerCount": 0,
+  "tags": ["facebook", "automation", "content-creation"]
 }
