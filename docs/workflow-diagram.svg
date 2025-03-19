@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+        </marker>
+    </defs>
+    
+    <!-- Google Sheets Node -->
+    <g transform="translate(50,150)">
+        <rect width="150" height="80" rx="10" fill="#0F9D58" stroke="#333" stroke-width="2"/>
+        <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial" font-size="14">Google Sheets</text>
+        <text x="75" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Đọc dữ liệu từ</text>
+        <text x="75" y="70" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Sheet A:D</text>
+    </g>
+    
+    <!-- Arrow 1 -->
+    <line x1="200" y1="190" x2="250" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- OpenAI Content Node -->
+    <g transform="translate(250,150)">
+        <rect width="150" height="80" rx="10" fill="#412991" stroke="#333" stroke-width="2"/>
+        <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial" font-size="14">OpenAI GPT-4</text>
+        <text x="75" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Tạo nội dung</text>
+        <text x="75" y="70" text-anchor="middle" fill="white" font-family="Arial" font-size="12">từ tiêu đề</text>
+    </g>
+    
+    <!-- Arrow 2 -->
+    <line x1="400" y1="190" x2="450" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- OpenAI Image Node -->
+    <g transform="translate(450,150)">
+        <rect width="150" height="80" rx="10" fill="#412991" stroke="#333" stroke-width="2"/>
+        <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial" font-size="14">OpenAI DALL-E</text>
+        <text x="75" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Tạo hình ảnh</text>
+        <text x="75" y="70" text-anchor="middle" fill="white" font-family="Arial" font-size="12">từ nội dung</text>
+    </g>
+    
+    <!-- Arrow 3 -->
+    <line x1="600" y1="190" x2="650" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Facebook Node -->
+    <g transform="translate(650,150)">
+        <rect width="150" height="80" rx="10" fill="#1877F2" stroke="#333" stroke-width="2"/>
+        <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial" font-size="14">Facebook</text>
+        <text x="75" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Đăng bài lên</text>
+        <text x="75" y="70" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Fanpage</text>
+    </g>
+    
+    <!-- Title -->
+    <text x="400" y="50" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold">Workflow Tự động đăng bài Facebook</text>
+    
+    <!-- Description -->
+    <text x="400" y="350" text-anchor="middle" font-family="Arial" font-size="14">Tự động hóa quy trình từ Google Sheets đến Facebook Fanpage với OpenAI</text>
+</svg>
