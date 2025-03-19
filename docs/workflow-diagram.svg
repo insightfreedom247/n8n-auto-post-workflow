@@ -1,50 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="800" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
             <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
         </marker>
+        
+        <!-- Google Sheets Icon -->
+        <symbol id="sheets-icon" viewBox="0 0 24 24">
+            <path d="M19.5,3 L4.5,3 C3.67,3 3,3.67 3,4.5 L3,19.5 C3,20.33 3.67,21 4.5,21 L19.5,21 C20.33,21 21,20.33 21,19.5 L21,4.5 C21,3.67 20.33,3 19.5,3 Z M8,18 L5,18 L5,15 L8,15 L8,18 Z M8,14 L5,14 L5,11 L8,11 L8,14 Z M8,10 L5,10 L5,7 L8,7 L8,10 Z M19,18 L9,18 L9,15 L19,15 L19,18 Z M19,14 L9,14 L9,11 L19,11 L19,14 Z M19,10 L9,10 L9,7 L19,7 L19,10 Z" fill="#0F9D58"/>
+        </symbol>
+        
+        <!-- OpenAI Icon -->
+        <symbol id="openai-icon" viewBox="0 0 24 24">
+            <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464z" fill="#000000"/>
+        </symbol>
+        
+        <!-- Facebook Icon -->
+        <symbol id="facebook-icon" viewBox="0 0 24 24">
+            <path d="M20,2 L4,2 C2.9,2 2,2.9 2,4 L2,20 C2,21.1 2.9,22 4,22 L20,22 C21.1,22 22,21.1 22,20 L22,4 C22,2.9 21.1,2 20,2 Z M18,8 L16,8 C15.3,8 15,8.3 15,9 L15,11 L18,11 L17.5,14 L15,14 L15,22 L12,22 L12,14 L10,14 L10,11 L12,11 L12,8.5 C12,6.3 13.3,5 15.5,5 C16.6,5 17.6,5.1 18,5.2 L18,8 Z" fill="#1877F2"/>
+        </symbol>
     </defs>
     
     <!-- Google Sheets Node -->
     <g transform="translate(50,150)">
-        <rect width="150" height="80" rx="10" fill="#0F9D58" stroke="#333" stroke-width="2"/>
-        <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial" font-size="14">Google Sheets</text>
-        <text x="75" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Đọc dữ liệu từ</text>
-        <text x="75" y="70" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Sheet A:D</text>
+        <rect width="150" height="100" rx="10" fill="#ffffff" stroke="#333" stroke-width="2"/>
+        <use xlink:href="#sheets-icon" x="63" y="10" width="24" height="24"/>
+        <text x="75" y="55" text-anchor="middle" fill="#333" font-family="Arial" font-size="14">Google Sheets</text>
+        <text x="75" y="75" text-anchor="middle" fill="#333" font-family="Arial" font-size="12">Đọc dữ liệu từ</text>
+        <text x="75" y="90" text-anchor="middle" fill="#333" font-family="Arial" font-size="12">Sheet A:D</text>
     </g>
     
     <!-- Arrow 1 -->
-    <line x1="200" y1="190" x2="250" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="200" y1="200" x2="250" y2="200" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
     
     <!-- OpenAI Content Node -->
     <g transform="translate(250,150)">
-        <rect width="150" height="80" rx="10" fill="#412991" stroke="#333" stroke-width="2"/>
-        <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial" font-size="14">OpenAI GPT-4</text>
-        <text x="75" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Tạo nội dung</text>
-        <text x="75" y="70" text-anchor="middle" fill="white" font-family="Arial" font-size="12">từ tiêu đề</text>
+        <rect width="150" height="100" rx="10" fill="#ffffff" stroke="#333" stroke-width="2"/>
+        <use xlink:href="#openai-icon" x="63" y="10" width="24" height="24"/>
+        <text x="75" y="55" text-anchor="middle" fill="#333" font-family="Arial" font-size="14">OpenAI GPT-4</text>
+        <text x="75" y="75" text-anchor="middle" fill="#333" font-family="Arial" font-size="12">Tạo nội dung</text>
+        <text x="75" y="90" text-anchor="middle" fill="#333" font-family="Arial" font-size="12">từ tiêu đề</text>
     </g>
     
     <!-- Arrow 2 -->
-    <line x1="400" y1="190" x2="450" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="400" y1="200" x2="450" y2="200" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
     
     <!-- OpenAI Image Node -->
     <g transform="translate(450,150)">
-        <rect width="150" height="80" rx="10" fill="#412991" stroke="#333" stroke-width="2"/>
-        <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial" font-size="14">OpenAI DALL-E</text>
-        <text x="75" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Tạo hình ảnh</text>
-        <text x="75" y="70" text-anchor="middle" fill="white" font-family="Arial" font-size="12">từ nội dung</text>
+        <rect width="150" height="100" rx="10" fill="#ffffff" stroke="#333" stroke-width="2"/>
+        <use xlink:href="#openai-icon" x="63" y="10" width="24" height="24"/>
+        <text x="75" y="55" text-anchor="middle" fill="#333" font-family="Arial" font-size="14">OpenAI DALL-E</text>
+        <text x="75" y="75" text-anchor="middle" fill="#333" font-family="Arial" font-size="12">Tạo hình ảnh</text>
+        <text x="75" y="90" text-anchor="middle" fill="#333" font-family="Arial" font-size="12">từ nội dung</text>
     </g>
     
     <!-- Arrow 3 -->
-    <line x1="600" y1="190" x2="650" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="600" y1="200" x2="650" y2="200" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
     
     <!-- Facebook Node -->
     <g transform="translate(650,150)">
-        <rect width="150" height="80" rx="10" fill="#1877F2" stroke="#333" stroke-width="2"/>
-        <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial" font-size="14">Facebook</text>
-        <text x="75" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Đăng bài lên</text>
-        <text x="75" y="70" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Fanpage</text>
+        <rect width="150" height="100" rx="10" fill="#ffffff" stroke="#333" stroke-width="2"/>
+        <use xlink:href="#facebook-icon" x="63" y="10" width="24" height="24"/>
+        <text x="75" y="55" text-anchor="middle" fill="#333" font-family="Arial" font-size="14">Facebook</text>
+        <text x="75" y="75" text-anchor="middle" fill="#333" font-family="Arial" font-size="12">Đăng bài lên</text>
+        <text x="75" y="90" text-anchor="middle" fill="#333" font-family="Arial" font-size="12">Fanpage</text>
     </g>
     
     <!-- Title -->
